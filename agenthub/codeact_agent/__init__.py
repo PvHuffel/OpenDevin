@@ -19,9 +19,9 @@ from opendevin.observation import (
 
 from opendevin.llm.llm import LLM
 
-assert (
-    "OPENAI_API_KEY" in os.environ
-), "Please set the OPENAI_API_KEY environment variable."
+#assert (
+#    "OPENAI_API_KEY" in os.environ
+#), "Please set the OPENAI_API_KEY environment variable."
 
 
 

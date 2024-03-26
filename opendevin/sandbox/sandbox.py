@@ -166,7 +166,7 @@ class DockerInteractive:
                     working_dir="/workspace",
                     name=self.container_name,
                     detach=True,
-                    volumes={self.workspace_dir: {"bind": "/workspace", "mode": "rw"}})
+    volumes={self.workspace_dir: {"bind": "/workspace", "mode": "rw"}})
         except Exception as e:
             print(f"Failed to start container: {e}")
             raise e
