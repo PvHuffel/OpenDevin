@@ -15,11 +15,11 @@ Settings.embed_model = HuggingFaceEmbedding(
 
 
 class LongTermMemory:
-    def __init__(self, model):
+    def __init__(self):
         db = chromadb.Client()
         self.collection = db.get_or_create_collection(name="memories")
         vector_store = ChromaVectorStore(chroma_collection=self.collection)
-        self.index = VectorStoreIndex.from_vector_store(vector_store, model=model)
+        self.index = VectorStoreIndex.from_vector_store(vector_store)
         self.thought_idx = 0
 
     def add_event(self, event):

@@ -74,9 +74,8 @@ class LangchainsAgent(Agent):
 
     def __init__(self, llm: LLM):
         super().__init__(llm)
-        self.llm = llm
         self.monologue = Monologue()
-        self.memory = LongTermMemory(llm)
+        self.memory = LongTermMemory()
 
     def _add_event(self, event: dict):
         if 'output' in event['args'] and len(event['args']['output']) > MAX_OUTPUT_LENGTH:
@@ -94,7 +93,7 @@ class LangchainsAgent(Agent):
         if self.instruction is None or self.instruction == "":
             raise ValueError("Instruction must be provided")
         self.monologue = Monologue()
-        self.memory = LongTermMemory(self.llm)
+        self.memory = LongTermMemory()
 
         next_is_output = False
         for thought in INITIAL_THOUGHTS:

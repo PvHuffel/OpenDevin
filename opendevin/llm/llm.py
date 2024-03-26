@@ -2,8 +2,6 @@ from litellm import completion as litellm_completion
 from functools import partial
 import os
 
-litellm_completion.set_verbose=True
-
 DEFAULT_MODEL = os.getenv("LLM_MODEL", "gpt-4-0125-preview")
 DEFAULT_API_KEY = os.getenv("LLM_API_KEY", "")
 
